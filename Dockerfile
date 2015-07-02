@@ -15,13 +15,9 @@ RUN cd /usr/src/statsite \
   && cp statsite /usr/bin/ \
   && cp sinks/* /opt/statsite/sinks/
 
-ENV INFLUXDB_HOST influxdb
-ENV INFLUXDB_PORT 8086
-ENV INFLUXDB_DATABASE test
-
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD statsite_config /etc/statsite/statsite.conf
-ADD sink_influxdb_sink_ini /etc/statsite/sinks/influxdb.ini
+ADD sink_stdout.sh /usr/src/statsite/sinks/
 
 EXPOSE 8125
 
