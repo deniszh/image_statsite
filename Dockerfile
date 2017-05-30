@@ -11,7 +11,7 @@ RUN git clone https://github.com/armon/statsite.git /usr/src/statsite \
   && mkdir -p /var/run/statsite
 
 RUN cd /usr/src/statsite \
-  && ./autogen.sh \
+  && ./bootstrap.sh \
   && ./configure \
   && make \
   && cp statsite /usr/bin/ \
