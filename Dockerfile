@@ -5,7 +5,7 @@ RUN apt-get update \
 
 RUN git clone https://github.com/armon/statsite.git /usr/src/statsite \
   && cd /usr/src/statsite \
-  && git checkout tags/v0.7.1 \
+  && git checkout tags/v0.8.0 \
   && mkdir -p /opt/statsite/sinks \
   && mkdir -p /etc/statsite \
   && mkdir -p /var/run/statsite
