@@ -17,8 +17,8 @@ echo "cpu:13.333|kv\n" | telnet docker-host-ip 8125
 
 ### Custom sinks
 
-Override the default sink with the SINK environment variable.
+Override the default sink with the SINK environment variable, e.g.
 
 ```
-docker run -p "8125:8125" -it -e SINK="/path/to/sink --flags" kpettijohn/statsite
+docker run -p "8125:8125" -it -e SINK="python /opt/statsite/sinks/graphite.py localhost 2003" kpettijohn/statsite
 ```
